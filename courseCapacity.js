@@ -25,20 +25,20 @@ let g_Program = null;
 let g_CourseCode = null;
 let g_RequestBody = null;
 let g_Count = 0;
+
 function strToHTML(str) {
-	var doc = new jsdom.JSDOM(str);
-	return doc;
+  var doc = new jsdom.JSDOM(str);
+  return doc;
 }
 
 function printRow(row) {
-  if (row.item(INDEXES.CODE).textContent === g_CourseCode) {
-    console.log('\n');
-    console.log("Course Code: " + row.item(INDEXES.CODE).textContent);
-    console.log("Course Name: " + row.item(INDEXES.NAME).textContent);
-    console.log("Course Capacity: " + row.item(INDEXES.CAPACITY).textContent);
-    console.log("Used Capacity: " + row.item(INDEXES.USED).textContent);
-    console.log("Section:"+ row.item(INDEXES.SECTION).textContent )
-  }
+  console.log('\n');
+  console.log("Course Code: " + row.item(INDEXES.CODE).textContent);
+  console.log("Course Name: " + row.item(INDEXES.NAME).textContent);
+  console.log("Course Capacity: " + row.item(INDEXES.CAPACITY).textContent);
+  console.log("Used Capacity: " + row.item(INDEXES.USED).textContent);
+  console.log("Section:"+ row.item(INDEXES.SECTION).textContent )
+  
 }
 
 function printFound(row) {
