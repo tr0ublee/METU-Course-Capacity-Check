@@ -107,8 +107,10 @@ async function readGlobalVariablesandRun () {
   g_Program = selectProgram[0].split('=')[1];
   const cc = await question("Enter the Course Code: ");
   g_CourseCode = cc;
+  const interval = await question("How many seconds do you want between the requests: ");
+  const intervalInt = parseInt(interval)*1000;
   g_RequestBody = 'selectSemester=' + g_Semester + '&selectProgram=' + g_Program + '&submitSearchForm=Search&stamp=' + g_Stamp;
-  g_Timer = setInterval(postRequest,2000); //starts
+  g_Timer = setInterval(postRequest,intervalInt); //starts
   readline.close();
 }
 
