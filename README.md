@@ -22,4 +22,4 @@
   9- Hit the enter button and wait. The code will beep when capacity is available.
       <br></br>
 
-  <b>NOTE: There is no error checking on inputs. You may enter an invalid course code and may end up waiting forever </b>
+  <b>NOTE: There is no error checking on inputs. If you dont see course information after the Cycle # text, then you probably had entered an invalid/wrong course number</b>
