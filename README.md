@@ -1,5 +1,7 @@
 # METU-Course-Capacity-Check
   A Node script that fetches specified course capacity and notifies when it is not full by beeping.
+# Disclaimer
+<h3><br> I do not take any responsibility in case of misuse of the code. Every user is responsible for their own actions. Use it at your own risk.</br></h3>
 # How to Use
   1- Install Node.js
       <br></br>
