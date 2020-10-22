@@ -79,15 +79,19 @@ function postRequest() {
     let HTMLData = strToHTML(body.data);
     let tableData = HTMLData.window.document.querySelector('tbody'); 
     console.log("Cycle: "+ (++g_Count));
+    let found = false;
     for (let i = 0; i < tableData.rows.length; i++) {
         let row = tableData.rows.item(i).cells;
         if (row.item(INDEXES.CODE).textContent === g_CourseCode) {
           if (row.item(INDEXES.CAPACITY).textContent !== row.item(INDEXES.USED).textContent) {
             printFound(row);
+            found = true;
             clearInterval(g_Timer); 
             g_Timer = setInterval(ringBell, 1000);
             console.log ('Press CTRL+C to stop');
-          } 
+          } else if (!found) {
+            printRow(row);
+          }
         }        
     }
   });
