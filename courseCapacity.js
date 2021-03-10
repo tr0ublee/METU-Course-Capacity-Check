@@ -18,6 +18,7 @@ const INDEXES = {
   STATUS: 19,
   SECTION: 11
 };
+const TIMER_MS = 30000;
 let g_Timer = null;
 let g_Stamp  = null;
 let g_Semester = null  ;
@@ -112,7 +113,7 @@ async function readGlobalVariablesandRun () {
   const cc = await question("Enter the Course Code: ");
   g_CourseCode = cc;
   g_RequestBody = 'selectSemester=' + g_Semester + '&selectProgram=' + g_Program + '&submitSearchForm=Search&stamp=' + g_Stamp;
-  g_Timer = setInterval(postRequest,30000); //starts
+  g_Timer = setInterval(postRequest,TIMER_MS); //starts
   readline.close();
 }
 
